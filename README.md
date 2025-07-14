@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Social Media Profile Page
+
+A responsive social media profile page inspired by YouTube and Instagram UI/UX. Built with React, TypeScript, and TailwindCSS.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
