@@ -2,6 +2,15 @@
 
 A responsive social media profile page inspired by YouTube and Instagram UI/UX. Built with React, TypeScript, and TailwindCSS.
 
+## Project Overview
+
+This project demonstrates how to build a social media profile page with:
+
+- Profile information section (top 30-35% of screen)
+- YouTube and Instagram stats display
+- Tabbed interface with Videos, Posts, Price Card, and Products tabs
+- Responsive design using TailwindCSS
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
