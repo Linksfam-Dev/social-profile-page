@@ -15,16 +15,18 @@ type VideosTabProps = {
 
 const VideosTab: React.FC<VideosTabProps> = ({ videos }) => {
   return (
-    <div className="grid grid-cols-2 gap-2">
+    <div className="flex flex-col gap-1 -mx-2">
+      {/* Full-width bleeding edge rectangular layout */}
       {videos.map(video => (
-        <VideoCard 
-          key={video.id} 
-          id={video.id}
-          thumbnail={video.thumbnail} 
-          title={video.title} 
-          views={video.views}
-          duration={video.duration}
-        />
+        <div key={video.id} className="w-full mb-3">
+          <VideoCard 
+            id={video.id}
+            thumbnail={video.thumbnail} 
+            title={video.title} 
+            views={video.views}
+            duration={video.duration}
+          />
+        </div>
       ))}
     </div>
   );

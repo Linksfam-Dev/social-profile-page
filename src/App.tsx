@@ -3,10 +3,6 @@ import './App.css';
 
 // Import components
 import ProfileHeader from './components/ProfileHeader';
-import YoutubeStats from './components/YoutubeStats';
-import InstagramStats from './components/InstagramStats';
-import UserInfo from './components/UserInfo';
-import ContactCTA from './components/ContactCTA';
 import TabNavigation from './components/TabNavigation';
 import VideosTab from './components/VideosTab';
 import PostsTab from './components/PostsTab';
@@ -19,49 +15,33 @@ import { profileData } from './data/profileData';
 
 function App() {
   const [activeTab, setActiveTab] = useState<TabType>('videos');
+  const [bioExpanded, setBioExpanded] = useState(false);
 
   return (
-    <div className="bg-black text-white min-h-screen">
-      {/* Profile Section (30-35% of screen) */}
+    <div className="bg-black text-white min-h-screen max-w-md mx-auto">
+      {/* Profile Section (top 30% of screen) */}
       <div className="profile-section pb-4">
-        {/* Header with profile pic, name, handle */}
+        {/* New Profile Header with all required information */}
         <ProfileHeader 
           profilePic={profileData.profilePic}
           name={profileData.name}
           handle={profileData.handle}
           about={profileData.about}
+          youtubeHandle="@creator_youtube"
+          youtubeSubscribers={profileData.youtubeStats.subscribers}
+          youtubePosts={profileData.youtubeStats.posts}
+          followers={profileData.instagramStats.followers}
+          following={profileData.instagramStats.following}
+          posts={profileData.instagramStats.posts}
+          lastPostDate={profileData.lastActive}
+          website={profileData.promoUrl.replace('https://', '')}
         />
-        
-        {/* Stats Section */}
-        <div className="flex justify-between px-4 py-2">
-          {/* YouTube Stats */}
-          <YoutubeStats 
-            subscribers={profileData.youtubeStats.subscribers}
-            posts={profileData.youtubeStats.posts}
-          />
-          
-          {/* Instagram Stats */}
-          <InstagramStats
-            following={profileData.instagramStats.following}
-            followers={profileData.instagramStats.followers}
-            posts={profileData.instagramStats.posts}
-          />
-        </div>
-        
-        {/* Last active & Promo URL */}
-        <UserInfo
-          lastActive={profileData.lastActive}
-          promoUrl={profileData.promoUrl}
-        />
-        
-        {/* Contact CTA */}
-        <ContactCTA />
       </div>
       
       {/* Tab Navigation */}
       <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
       
-      {/* Tab Content */}
+      {/* Tab Content - YouTube Shorts style with bleeding edge rectangular cards */}
       <div className="p-2">
         {activeTab === 'videos' && <VideosTab videos={profileData.videos} />}
         {activeTab === 'posts' && <PostsTab />}

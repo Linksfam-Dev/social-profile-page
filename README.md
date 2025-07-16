@@ -1,6 +1,6 @@
 # Social Media Profile Page
 
-A responsive social media profile page inspired by YouTube and Instagram UI/UX. Built with React, TypeScript, and TailwindCSS.
+A responsive social media profile page inspired by YouTube and Instagram UI/UX. Built with React, TypeScript, and TailwindCSS. This project focuses on creating a mobile-first design that follows Instagram's style guide for profile pages.
 
 ## Project Overview
 
